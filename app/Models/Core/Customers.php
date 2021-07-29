@@ -46,7 +46,7 @@ class Customers extends Model
         $user = User::sortable(['id'=>'ASC'])
             ->LeftJoin('user_to_address', 'user_to_address.user_id' ,'=', 'users.id')
             ->LeftJoin('address_book','address_book.address_book_id','=', 'user_to_address.address_book_id')
-            ->LeftJoin('countries','countries.countries_id','=', 'address_book.entry_country_id')
+            ->LeftJoin('countries','countries.state_id','=', 'address_book.entry_country_id')
             ->LeftJoin('zones','zones.zone_id','=', 'address_book.entry_zone_id')
             ->select('users.*', 'address_book.entry_gender as entry_gender', 'address_book.entry_company as entry_company',
             'address_book.entry_firstname as entry_firstname', 'address_book.entry_lastname as entry_lastname',

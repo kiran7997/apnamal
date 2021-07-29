@@ -3,11 +3,11 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1> {{ trans('labels.AddCountry') }} <small>{{ trans('labels.AddCountry') }}...</small> </h1>
+            <h1> {{ trans('Add State') }} <small>{{ trans('Add State') }}...</small> </h1>
             <ol class="breadcrumb">
                 <li><a href="{{ URL::to('admin/dashboard/this_month')}}"><i class="fa fa-dashboard"></i> {{ trans('labels.breadcrumb_dashboard') }}</a></li>
-                <li><a href="{{ URL::to('admin/countries/display')}}"><i class="fa fa-money"></i>{{ trans('labels.ListingCountries') }} </a></li>
-                <li class="active">{{ trans('labels.AddCountry') }} </li>
+                <li><a href="{{ URL::to('admin/countries/display')}}"><i class="fa fa-money"></i>{{ trans(' ListingStates') }} </a></li>
+                <li class="active">{{ trans('Add State') }} </li>
             </ol>
         </section>
 
@@ -22,7 +22,7 @@
 
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">{{ trans('labels.AddCountry') }}</h3>
+                            <h3 class="box-title">{{ trans('Add State') }}</h3>
                         </div>
 
                         <!-- /.box-header -->
@@ -43,34 +43,34 @@
                                         <div class="box-body">
                                             {!! Form::open(array('url' =>'admin/countries/add', 'method'=>'post', 'class' => 'form-horizontal  form-validate', 'enctype'=>'multipart/form-data')) !!}
                                             <div class="form-group">
-                                                <label for="name" class="col-sm-2 col-md-3 control-label">{{ trans('labels.CountryName') }}
+                                                <label for="name" class="col-sm-2 col-md-3 control-label">{{ trans('State Name') }}
                                                 </label>
                                                 <div class="col-sm-10 col-md-4">
-                                                    {!! Form::text('countries_name',  '', array('class'=>'form-control  field-validate', 'id'=>'countries_name'))!!}
+                                                    {!! Form::text('state_name',  '', array('class'=>'form-control  field-validate', 'id'=>'state_name'))!!}
                                                     <span class="help-block" style="font-weight: normal;font-size: 11px;margin-bottom: 0;">
-                                                      {{ trans('labels.CountryNameText') }}</span>
+                                                      {{ trans('Enter State Name') }}</span>
                                                     <span class="help-block hidden">{{ trans('labels.textRequiredFieldMessage') }}</span>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="name" class="col-sm-2 col-md-3 control-label">{{ trans('labels.ISOCode2') }}
+                                                <label for="name" class="col-sm-2 col-md-3 control-label">{{ trans('District') }}
                                                 </label>
                                                 <div class="col-sm-10 col-md-4">
-                                                    {!! Form::text('countries_iso_code_2',  '', array('class'=>'form-control field-validate', 'id'=>'countries_iso_code_2'))!!}
+                                                    {!! Form::text('district',  '', array('class'=>'form-control field-validate', 'id'=>'district'))!!}
                                                     <span class="help-block" style="font-weight: normal;font-size: 11px;margin-bottom: 0;">
-                               	                       {{ trans('labels.ISOCode2Text') }}</span>
+                               	                       {{ trans('Enter District') }}</span>
                                                     <span class="help-block hidden">{{ trans('labels.textRequiredFieldMessage') }}</span>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="name" class="col-sm-2 col-md-3 control-label">{{ trans('labels.ISOCode3') }}
+                                                <label for="name" class="col-sm-2 col-md-3 control-label">{{ trans('Sub-District') }}
                                                 </label>
                                                 <div class="col-sm-10 col-md-4">
-                                                    {!! Form::text('countries_iso_code_3',  '', array('class'=>'form-control field-validate', 'id'=>'countries_iso_code_3'))!!}
+                                                    {!! Form::text('sub_district',  '', array('class'=>'form-control field-validate', 'id'=>'sub_district'))!!}
                                                     <span class="help-block" style="font-weight: normal;font-size: 11px;margin-bottom: 0;">
-                                                      {{ trans('labels.ISOCode3Text') }}</span>
+                                                      {{ trans('Enter Sub_District') }}</span>
                                                     <span class="help-block hidden">{{ trans('labels.textRequiredFieldMessage') }}</span>
                                                 </div>
                                             </div>

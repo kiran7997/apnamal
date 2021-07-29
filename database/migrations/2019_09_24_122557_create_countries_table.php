@@ -14,10 +14,10 @@ class CreateCountriesTable extends Migration {
 	{
 		Schema::create('countries', function(Blueprint $table)
 		{
-			$table->integer('countries_id', true);
-			$table->string('countries_name', 191)->index('IDX_COUNTRIES_NAME');
-			$table->char('countries_iso_code_2', 2);
-			$table->char('countries_iso_code_3', 3);
+			$table->integer('state_id', true);
+			$table->string('state_name', 191)->index('IDX_COUNTRIES_NAME');
+			$table->string('district');
+			$table->string('sub_district');
 			$table->integer('address_format_id');
 			$table->integer('country_code')->nullable();
 		});

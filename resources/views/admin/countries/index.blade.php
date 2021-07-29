@@ -3,10 +3,10 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>  {{ trans('labels.Countries') }} <small>{{ trans('labels.ListingCountries') }}...</small> </h1>
+            <h1>  {{ trans('labels.States') }} <small>{{ trans('labels.ListingState') }}...</small> </h1>
             <ol class="breadcrumb">
                 <li><a href="{{ URL::to('admin/dashboard/this_month')}}"><i class="fa fa-dashboard"></i> {{ trans('labels.breadcrumb_dashboard') }}</a></li>
-                <li class="active"> {{ trans('labels.Countries') }}</li>
+                <li class="active"> {{ trans('labels.State') }}</li>
             </ol>
         </section>
 
@@ -25,9 +25,9 @@
                                     <div class="input-group-form search-panel ">
                                         <select type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown" name="FilterBy" id="FilterBy"  >
                                             <option value="" selected disabled hidden>{{trans('labels.Filter By')}}</option>
-                                            <option value="CountryName"  @if(isset($name)) @if  ($name == "CountryName") {{ 'selected' }} @endif @endif>{{trans('labels.Name')}}</option>
-                                            <option value="ISOCode2" @if(isset($name)) @if  ($name == "ISOCode2") {{ 'selected' }}@endif @endif>{{trans('labels.ISOCode2')}}</option>
-                                            <option value="ISOCode3" @if(isset($name)) @if  ($name == "ISOCode3") {{ 'selected' }}@endif @endif>{{trans('labels.ISOCode3')}}</option>
+                                            <option value="state_name"  @if(isset($name)) @if  ($name == "state_name") {{ 'selected' }} @endif @endif>{{trans('State')}}</option>
+                                            <option value="district" @if(isset($name)) @if  ($name == "district") {{ 'selected' }}@endif @endif>{{trans('District')}}</option>
+                                            <option value="sub_district" @if(isset($name)) @if  ($name == "sub_district") {{ 'selected' }}@endif @endif>{{trans('Sub-District')}}</option>
                                         </select>
                                         <input type="text" class="form-control input-group-form " name="parameter" placeholder="Search term..." id="parameter" @if(isset($param)) value="{{$param}}" @endif >
                                         <button class="btn btn-primary " id="submit" type="submit"><span class="glyphicon glyphicon-search"></span></button>
@@ -60,10 +60,10 @@
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                         <tr>
-                                            <th>@sortablelink('countries_id', trans('labels.ID') )</th>
-                                            <th>@sortablelink('countries_name', trans('labels.CountryName') )</th>
-                                            <th>@sortablelink('countries_iso_code_2', trans('labels.ISOCode2') )</th>
-                                            <th>@sortablelink('countries_iso_code_3', trans('labels.ISOCode3') )</th>
+                                            <th>@sortablelink('state_id', trans('labels.ID') )</th>
+                                            <th>@sortablelink('state_name', trans('State Name') )</th>
+                                            <th>@sortablelink('district', trans('District') )</th>
+                                            <th>@sortablelink('sub_district', trans('Sub-District') )</th>
                                             <th>{{ trans('labels.Action') }}</th>
                                         </tr>
                                         </thead>
@@ -71,13 +71,13 @@
                                         @if(count($countryData['countries'])>0)
                                             @foreach ($countryData['countries'] as $key=>$countries)
                                                 <tr>
-                                                    <td>{{ $countries->countries_id }}</td>
-                                                    <td>{{ $countries->countries_name }}</td>
-                                                    <td>{{ $countries->countries_iso_code_2 }}</td>
-                                                    <td>{{ $countries->countries_iso_code_3 }}</td>
-                                                    @php $id =$countries->countries_id;   @endphp
+                                                    <td>{{ $countries->state_id }}</td>
+                                                    <td>{{ $countries->state_name }}</td>
+                                                    <td>{{ $countries->district }}</td>
+                                                    <td>{{ $countries->sub_district }}</td>
+                                                    @php $id =$countries->state_id;   @endphp
                                                     <td><a data-toggle="tooltip" data-placement="bottom" title="{{ trans('labels.Edit') }}" href="{{url('admin/countries/edit',$id)}}" class="badge bg-light-blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                        <a  data-toggle="tooltip" data-placement="bottom" title=" {{ trans('labels.Delete') }}" id="deleteCountryId" countries_id ="{{ $countries->countries_id }}" class="badge bg-red"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                        <a  data-toggle="tooltip" data-placement="bottom" title=" {{ trans('labels.Delete') }}" id="deleteCountryId" countries_id ="{{ $countries->state_id }}" class="badge bg-red"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                                     </td>
                                                 </tr>
                                             @endforeach
